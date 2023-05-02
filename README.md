@@ -1,4 +1,4 @@
-![boilerplate](https://user-images.githubusercontent.com/101672047/235615144-73d46191-6ff8-45a3-871b-22bb92452e48.png)
+![image](https://user-images.githubusercontent.com/101672047/235722220-dbf567c4-4e8f-4bb1-8f9a-1d6a221cda33.png)
 
 Boilerplate for Neovim. A simple, well-documented template to start building your own configuration. I've created a lot of configurations before neovim introduced Lua. From time to time I saw repeating patterns: creating directories, importing the same files, and much more. I decided to create a boilerplate so that when creating a new configuration, I didn’t have to write everything from the very beginning.
 
