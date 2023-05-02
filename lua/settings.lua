@@ -3,7 +3,8 @@
   Description: Base settings for neovim
   Info: Use <zo> and <zc> to open and close foldings
 ]]
-require("helpers/globals")
+
+require "helpers/globals"
 
 -- Set associating between turned on plugins and filetype
 cmd[[filetype plugin on]]

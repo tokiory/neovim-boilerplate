@@ -1,5 +1,5 @@
-require('helpers/globals');
-require('helpers/keyboard');
+require "helpers/globals"
+require "helpers/keyboard"
 
 g.mapleader = ' '                                                                 -- Use Space, like key for alternative hotkeys
 
@@ -14,6 +14,7 @@ nm('gd', '<cmd>Telescope lsp_definitions<CR>')                                  
 nm('<leader>p', '<cmd>Telescope oldfiles<CR>')                                    -- Show recent files
 nm('<leader>r', '<cmd>Telescope projects<CR>')                                    -- Show projects
 nm('<leader>o', '<cmd>Telescope git_files<CR>')                                   -- Search for a file in project
+nm('<leader>i', '<cmd>Telescope jumplist<CR>')                                   -- Show jumplist (previous locations)
 nm('<leader><C-o>', '<cmd>Telescope find_files<CR>')                              -- Search for a file (ignoring git-ignore)
 nm('<leader>b', '<cmd>Telescope git_branches<CR>')                                -- Show git branches
 nm('<leader>f', '<cmd>Telescope live_grep<CR>')                                   -- Find a string in project
@@ -35,4 +36,4 @@ nm('gr', '<cmd>Trouble lsp_references<CR>')                                     
 nm('<leader>v', '<cmd>NvimTreeToggle<CR>')                                        -- Toggle file explorer
 -- }}}
 
--- vim: tabstop=2 shiftwidth=2 expandtab syntax=lua foldmethod=marker foldlevelstart=1
+-- vim: tabstop=2 shiftwidth=2 expandtab syntax=lua foldmethod=marker foldlevelstart=1 foldlevel=1

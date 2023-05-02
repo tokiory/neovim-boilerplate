@@ -5,7 +5,7 @@
   See: https://github.com/wbthomason/packer.nvim
 ]]
 
-require("helpers/globals")
+require "helpers/globals"
 cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
       "neovim/nvim-lspconfig",
     },
     config = function()
-      require("extensions/mason")
+      require "extensions.mason"
     end
   }
   -- }}}
@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
     config = function()
-      require("extensions/treesitter")
+      require "extensions.treesitter"
     end
   }
   -- }}}
@@ -44,7 +44,7 @@ return require('packer').startup(function(use)
       {'nvim-lua/plenary.nvim'}
     },
     config = function()
-      require("extensions/telescope")
+      require "extensions.telescope"
     end
   }
   -- }}}
@@ -56,7 +56,7 @@ return require('packer').startup(function(use)
       'nvim-tree/nvim-web-devicons', -- optional
     },
     config = function()
-      require("extensions/nvimtree")
+      require "extensions.nvimtree"
     end
   }
   -- }}}
@@ -75,7 +75,7 @@ return require('packer').startup(function(use)
       'rafamadriz/friendly-snippets',
     },
     config = function()
-      require("extensions/cmp")
+      require "extensions.cmp"
     end
   }
   -- }}}
@@ -84,8 +84,27 @@ return require('packer').startup(function(use)
   use {
     'onsails/lspkind-nvim',
     config = function()
-      require("extensions/lspkind")
+      require "extensions.lspkind"
     end
+  }
+  -- }}}
+
+    -- Git Signs{{{
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require "extensions.gitsigns"
+    end
+  }
+  -- }}}
+
+  -- Trouble {{{
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require "extensions.trouble"
+    end,
   }
   -- }}}
 end)
