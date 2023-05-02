@@ -60,6 +60,34 @@ return require('packer').startup(function(use)
     end
   }
   -- }}}
+
+  -- CMP {{{
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-emoji',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
+      'hrsh7th/cmp-nvim-lua',
+      'rafamadriz/friendly-snippets',
+    },
+    config = function()
+      require("extensions/cmp")
+    end
+  }
+  -- }}}
+
+  -- LSP Kind {{{
+  use {
+    'onsails/lspkind-nvim',
+    config = function()
+      require("extensions/lspkind")
+    end
+  }
+  -- }}}
 end)
 
 -- vim: tabstop=2 shiftwidth=2 expandtab syntax=lua foldmethod=marker foldlevelstart=1
