@@ -1,5 +1,8 @@
-# Neovim Boilerplate
-Modern neovim boilerplate (starter).
+![boilerplate](https://user-images.githubusercontent.com/101672047/235615144-73d46191-6ff8-45a3-871b-22bb92452e48.png)
+
+Boilerplate for Neovim. A simple, well-documented template to start building your own configuration. I've created a lot of configurations before neovim introduced Lua. From time to time I saw repeating patterns: creating directories, importing the same files, and much more. I decided to create a boilerplate so that when creating a new configuration, I didn’t have to write everything from the very beginning.
+
+Also, this boilerplate will be useful for beginners who do not know where to start writing their configuration. All files are well documented, at the top of each file you can find a frontmatter with the necessary data.
 
 ## Use it
 You can use this template with the following command:
@@ -32,3 +35,12 @@ You can use this template with the following command:
 │  └── settings.lua           -- Settings for neovim
 └── README.md
 ```
+
+# Packed Plugins
+
+- [packer](https://github.com/wbthomason/packer.nvim)
+- [mason.nvim](https://github.com/williamboman/mason.nvim)
+- [cmp](https://github.com/hrsh7th/nvim-cmp)
+- [lspkind](https://github.com/onsails/lspkind.nvim)
+- [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
+- [Tree Sitter](https://github.com/tree-sitter/tree-sitter)
