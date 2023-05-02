@@ -14,12 +14,12 @@ nm('gd', '<cmd>Telescope lsp_definitions<CR>')                                  
 nm('<leader>p', '<cmd>Telescope oldfiles<CR>')                                    -- Show recent files
 nm('<leader>r', '<cmd>Telescope projects<CR>')                                    -- Show projects
 nm('<leader>o', '<cmd>Telescope git_files<CR>')                                   -- Search for a file in project
-nm('<leader>i', '<cmd>Telescope jumplist<CR>')                                   -- Show jumplist (previous locations)
+nm('<leader>i', '<cmd>Telescope jumplist<CR>')                                    -- Show jumplist (previous locations)
 nm('<leader><C-o>', '<cmd>Telescope find_files<CR>')                              -- Search for a file (ignoring git-ignore)
 nm('<leader>b', '<cmd>Telescope git_branches<CR>')                                -- Show git branches
 nm('<leader>f', '<cmd>Telescope live_grep<CR>')                                   -- Find a string in project
 nm('<leader>q', '<cmd>Telescope buffers<CR>')                                     -- Show all buffers
-nm('<leader>c', '<cmd>TodoTelescope<CR>')                                         -- Show all special comments
+nm('<leader>a', '<cmd>Telescope<CR>')                                             -- Show all commands
 -- }}}
 
 -- Git {{{
