@@ -15,9 +15,9 @@ mason_lspconfig.setup({
     "tsserver",           -- LSP for Typescript and Javascript
     "emmet_ls",           -- LSP for Emmet (Vue, HTML, CSS)
     "cssls",              -- LSP for CSS
-    "dockerls",           -- LSP for Docker
     "pyright",            -- LSP for Python
-    "volar"               -- LSP for Vue
+    "volar",              -- LSP for Vue
+    "gopls",              -- LSP for Go
   }
 });
 
