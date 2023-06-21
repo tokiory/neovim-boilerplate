@@ -114,12 +114,12 @@ return {
   },
   -- }}}
 
-  -- Theme: Gruvbox Material {{{
+  -- Theme: Tokyo Dark {{{
   {
-    "sainnhe/gruvbox-material",
+    "tiagovla/tokyodark.nvim",
     lazy = false,
     config = function ()
-      require "extensions.colorscheme.gruvbox"
+      require "extensions.colorscheme.tokyodark"
     end
   },
   -- }}}
