@@ -20,11 +20,7 @@ You can use this template with the following command:
 ├── init.sh                   -- Script for installation side-software (aka packer)
 │
 ├── lua
-│  ├── extensions
-│  │  ├── mason.lua           -- Mason config
-│  │  ├── nvimtree.lua        -- Neovim Tree config
-│  │  ├── telescope.lua       -- Telescope config
-│  │  └── treesitter.lua      -- Treesitter config
+│  ├── extensions             -- Plugin configurations
 │  │
 │  ├── helpers
 │  │  ├── globals.lua         -- Global variables (aliases)
@@ -38,9 +34,13 @@ You can use this template with the following command:
 
 # Packed Plugins
 
-- [packer](https://github.com/wbthomason/packer.nvim)
+- [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
+- [neo-tree](https://github.com/nvim-tree/nvim-tree.lua)
+- [telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [cmp](https://github.com/hrsh7th/nvim-cmp)
 - [lspkind](https://github.com/onsails/lspkind.nvim)
-- [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
+- [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
+- [trouble.nvim](https://github.com/folke/trouble.nvim)
 - [Tree Sitter](https://github.com/tree-sitter/tree-sitter)
+- [tokyo-dark](https://github.com/tiagovla/tokyodark.nvim)
