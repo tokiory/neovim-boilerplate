@@ -114,12 +114,12 @@ return {
   },
   -- }}}
 
-  -- Theme: Tokyo Dark {{{
+  -- Theme: Sonokai {{{
   {
-    "tiagovla/tokyodark.nvim",
+    "sainnhe/sonokai",
     lazy = false,
     config = function ()
-      require "extensions.colorscheme.tokyodark"
+      require "extensions.colorscheme.sonokai"
     end
   },
   -- }}}
