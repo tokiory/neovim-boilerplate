@@ -2,7 +2,7 @@
   File: plugins.lua
   Description: This file needed for loading plugin list into lazy.nvim and loading plugins
   Info: Use <zo> and <zc> to open and close foldings
-  See: https://github.com/wbthomason/packer.nvim
+  See: https://github.com/folke/lazy.nvim
 ]]
 
 require "helpers/globals"

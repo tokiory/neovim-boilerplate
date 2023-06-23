@@ -43,4 +43,4 @@ You can use this template with the following command:
 - [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
 - [trouble.nvim](https://github.com/folke/trouble.nvim)
 - [Tree Sitter](https://github.com/tree-sitter/tree-sitter)
-- [tokyo-dark](https://github.com/tiagovla/tokyodark.nvim)
+- [sonokai](https://github.com/sainnhe/sonokai)
