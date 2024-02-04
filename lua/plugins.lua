@@ -22,6 +22,18 @@ return {
   },
   -- }}}
 
+-- Which key {{{
+{
+  "folke/which-key.nvim",
+    event = "VeryLazy",
+    config = true,
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+},
+-- }}}
+
   -- Neo Tree {{{
   {
     "nvim-neo-tree/neo-tree.nvim",

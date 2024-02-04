@@ -3,33 +3,53 @@ require "helpers/keyboard"
 
 g.mapleader = ' '                                                                 -- Use Space, like key for alternative hotkeys
 
+local wk = require("which-key")
+
+-- Global {{{
+wk.register({
+  ["K"] = {"<cmd>lua vim.lsp.buf.hover()<cr>", "Hover information"},
+  ["<leader>o"] = {"<cmd>Telescope find_files<cr>", "Find files"},
+  ["<leader>p"] = {"<cmd>Telescope oldfiles<cr>", "Previous files"},
+  ["<leader>f"] = {"<cmd>Telescope find_files<cr>", "Find in files"},
+  ["gD"] = {"<cmd>lua vim.lsp.buf.declaration()<cr>", "Go to declaration" },
+  ["<leader>v"] = { "<cmd>Neotree float toggle<cr>", "Show file explorer" }
+})
+-- }}}
+
 -- LSP {{{
-nm('K', '<cmd>lua vim.lsp.buf.hover()<CR>' )                                      -- Hover object
-nm('ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')                                -- Code actions
-nm('gR', '<cmd>lua vim.lsp.buf.rename()<CR>')                                     -- Rename an object
-nm('gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')                                -- Go to declaration
+wk.register({
+  l = {
+    name = "LSP",
+      ["<leader>lr"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename symbol" },
+      ["<leader>la"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action" },
+  }
+})
  -- }}}
 
 -- Telescope {{{
-nm('gd', '<cmd>Telescope lsp_definitions<CR>')                            -- Goto declaration
-nm('<leader>p', '<cmd>Telescope oldfiles<CR>')                                   -- Show recent files
-nm('<leader>O', '<cmd>Telescope git_files<CR>')                                  -- Search for a file in project
-nm('<leader>o', '<cmd>Telescope find_files<CR>')                                 -- Search for a file (ignoring git-ignore)
-nm('<leader>i', '<cmd>Telescope jumplist<CR>')                                   -- Show jumplist (previous locations)
-nm('<leader>b', '<cmd>Telescope git_branches<CR>')                               -- Show git branches
-nm('<leader>f', '<cmd>Telescope live_grep<CR>')                                  -- Find a string in project
-nm('<leader>q', '<cmd>Telescope buffers<CR>')                                    -- Show all buffers
-nm('<leader>a', '<cmd>Telescope<CR>')                                            -- Show all commands
-nm('<leader>t', '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>')              -- Search for dynamic symbols
+wk.register({
+  t = {
+    name = "Telescope",
+    t = {"<cmd>Telescope<cr>", "Open Telescope"},
+    p = {"<cmd>Telescope oldfiles<cr>", "Oldfiles"},
+    s = {"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace symbols"},
+    j = {"<cmd>Telescope jumplist<cr>", "Jumplist"},
+    b = {"<cmd>Telescope buffers<cr>", "Buffers"},
+    q = {"<cmd>Telescope quickfix<cr>", "Quickfix list"},
+    r = {"<cmd>Telescope resume<cr>", "Previous Telescope window"},
+    o = {"<cmd>Telescope find_files<CR>", "Find files"},
+    g = {
+      name = "Git",
+      b = {"<cmd>Telescope git_branches<cr>", "Git branches"},
+      o = { "<cmd>Telescope git_files<cr>", "Git files"},
+    }
+  }
+}, { prefix = "<leader>"})
 -- }}}
 
 -- Trouble {{{
-nm('<leader>x', '<cmd>TroubleToggle<CR>')                                         -- Show all problems in project (with help of LSP)
-nm('gr', '<cmd>Trouble lsp_references<CR>')                                       -- Show use of object in project
--- }}}
-
--- Neo Tree {{{
-nm('<leader>v', '<cmd>NeoTreeFocusToggle<CR>')                                        -- Toggle file explorer
+nm('<leader>x', '<cmd>TroubleToggle<CR>')                                        -- Show all problems in project (with help of LSP)
+nm('gr', '<cmd>Trouble lsp_references<CR>')                                      -- Show use of object in project
 -- }}}
 
 -- vim:tabstop=2 shiftwidth=2 expandtab syntax=lua foldmethod=marker foldlevelstart=0 foldlevel=0
