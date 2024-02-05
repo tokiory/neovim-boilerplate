@@ -11,7 +11,7 @@ wk.register({
   ["<leader>o"] = {"<cmd>Telescope find_files<cr>", "Find files"},
   ["<leader>p"] = {"<cmd>Telescope oldfiles<cr>", "Previous files"},
   ["<leader>f"] = {"<cmd>Telescope find_files<cr>", "Find in files"},
-  ["gD"] = {"<cmd>lua vim.lsp.buf.declaration()<cr>", "Go to declaration" },
+  ["gd"] = {"<cmd>lua vim.lsp.buf.definition()<cr>", "Go to declaration" },
   ["<leader>v"] = { "<cmd>Neotree float toggle<cr>", "Show file explorer" }
 })
 -- }}}
@@ -20,10 +20,10 @@ wk.register({
 wk.register({
   l = {
     name = "LSP",
-      ["<leader>lr"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename symbol" },
-      ["<leader>la"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action" },
+      ["r"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename symbol" },
+      ["a"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action" },
   }
-})
+}, { prefix = "<leader>" })
  -- }}}
 
 -- Telescope {{{
@@ -48,8 +48,10 @@ wk.register({
 -- }}}
 
 -- Trouble {{{
-nm('<leader>x', '<cmd>TroubleToggle<CR>')                                        -- Show all problems in project (with help of LSP)
-nm('gr', '<cmd>Trouble lsp_references<CR>')                                      -- Show use of object in project
+wk.register({
+  ["<leader>x"] = {"<cmd>TroubleToggle<cr>", "Toggle trouble" },
+  gr = {"<cmd>Trouble lsp_references<cr>", "Go to references"},
+})
 -- }}}
 
 -- vim:tabstop=2 shiftwidth=2 expandtab syntax=lua foldmethod=marker foldlevelstart=0 foldlevel=0
