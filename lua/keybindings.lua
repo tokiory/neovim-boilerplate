@@ -1,8 +1,6 @@
 require "helpers/globals"
 require "helpers/keyboard"
 
-g.mapleader = ' '                                                                 -- Use Space, like key for alternative hotkeys
-
 local wk = require("which-key")
 
 -- Global {{{
