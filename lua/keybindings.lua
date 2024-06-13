@@ -10,6 +10,7 @@ wk.register({
   ["<leader>p"] = {"<cmd>Telescope oldfiles<cr>", "Previous files"},
   ["<leader>f"] = {"<cmd>Telescope find_files<cr>", "Find in files"},
   ["gd"] = {"<cmd>lua vim.lsp.buf.definition()<cr>", "Go to declaration" },
+  ["gr"] = {"<cmd>Telescope lsp_references<cr>", "Go to references"},
   ["<leader>v"] = { "<cmd>Neotree float toggle<cr>", "Show file explorer" }
 })
 -- }}}
@@ -48,7 +49,6 @@ wk.register({
 -- Trouble {{{
 wk.register({
   ["<leader>x"] = {"<cmd>TroubleToggle<cr>", "Toggle trouble" },
-  gr = {"<cmd>Trouble lsp_references<cr>", "Go to references"},
 })
 -- }}}
 
