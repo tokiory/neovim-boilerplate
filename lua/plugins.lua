@@ -35,17 +35,18 @@ return {
 -- }}}
 
   -- Neo Tree {{{
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-    },
-    config = function ()
-      require "extensions.neotree"
-    end
-  },
+  -- Uncomment it if you wish, but don't forget to comment mini.files in extensions/mini.lua
+  -- {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   branch = "v3.x",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "MunifTanjim/nui.nvim",
+  --   },
+  --   config = function ()
+  --     require "extensions.neotree"
+  --   end
+  -- },
   -- }}}
 
   -- Telescope {{{
@@ -138,6 +139,15 @@ return {
   },
   -- }}}
 
+  -- Mini.nvim {{{
+  {
+    'echasnovski/mini.nvim',
+    version = false,
+    config = function ()
+      require("extensions.mini")
+    end
+  },
+  -- }}}
 }
 
 -- vim:tabstop=2 shiftwidth=2 expandtab syntax=lua foldmethod=marker foldlevelstart=0 foldlevel=0

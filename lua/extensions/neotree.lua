@@ -1,4 +1,10 @@
 local neotree = require("neo-tree")
+local wk = require("whick-key")
+
+wk.register({
+  ["<leader>v"] = { "<cmd>Neotree float toggle<cr>", "Show file explorer" }
+})
+
 
 neotree.setup({
   close_if_last_window = true,

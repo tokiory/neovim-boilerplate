@@ -11,7 +11,6 @@ wk.register({
   ["<leader>f"] = {"<cmd>Telescope find_files<cr>", "Find in files"},
   ["gd"] = {"<cmd>lua vim.lsp.buf.definition()<cr>", "Go to declaration" },
   ["gr"] = {"<cmd>Telescope lsp_references<cr>", "Go to references"},
-  ["<leader>v"] = { "<cmd>Neotree float toggle<cr>", "Show file explorer" }
 })
 -- }}}
 
