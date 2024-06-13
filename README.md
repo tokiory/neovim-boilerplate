@@ -72,3 +72,8 @@ You can use this template with the following command:
 - Use Treesitter (actually standard) to search for files, content and other pickers;
 - Use your favorite theme, you can comment Vitesse, there are several configs for different themes;
 - Use mini.nvim for editor utilities because mini.nvim provides a great experience and is as minimalistic as possible;
+
+## 💡 Tips
+- Rewrite it from scratch (it’s a template, cmon), you can replace each plugin with your favorite one;
+- RTFM, each plugin has a comment with a link to the repository;
+- Don't be afraid to break something. Remember: you can fork this repo as much as you like, just don't be afraid to break it;
