@@ -126,12 +126,14 @@ return {
   },
   -- }}}
 
-  -- Theme: Sonokai {{{
+  -- Theme: Vitesse {{{
   {
-    "sainnhe/sonokai",
-    lazy = false,
+    "2nthony/vitesse.nvim",
+    dependencies = {
+      "tjdevries/colorbuddy.nvim"
+    },
     config = function ()
-      require "extensions.colorscheme.sonokai"
+      require("extensions.colorscheme.vitesse")
     end
   },
   -- }}}
