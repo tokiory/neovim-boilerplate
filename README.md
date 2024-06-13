@@ -12,6 +12,19 @@ You can use this template with the following command:
     git clone https://github.com/tokiory/neovim-boilerplate $HOME/.config/nvim
 ```
 
+> [!WARNING]
+> Before using this configuration you will need NodeJS and Go (for Nodejs and Go LSP).
+> You can install it with your favorite package manager, but, I recommend using asdf.
+> You can get it [from this repo](https://github.com/asdf-vm/asdf).
+> After installation you will need to enter the following commands:
+> ```bash
+> asdf plugin add nodejs
+> asdf plugin add golang
+> asdf install golang <any version from 1.20>
+> asdf install nodejs <any version from 16>
+> ```
+
+
 # Structure
 
 ```
