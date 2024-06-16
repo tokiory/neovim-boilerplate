@@ -18,8 +18,10 @@ wk.register({
 })
 -- }}}
 
-
 -- Comments
 -- See: https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-comment.md
 require('mini.comment').setup()
 
+-- Autopairs
+-- See: https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md
+require('mini.pairs').setup()
