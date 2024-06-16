@@ -47,7 +47,7 @@ wk.register({
 
 -- Trouble {{{
 wk.register({
-  ["<leader>x"] = {"<cmd>TroubleToggle<cr>", "Toggle trouble" },
+  ["<leader>x"] = {"<cmd>Trouble diagnostics toggle<cr>", "Toggle trouble" },
 })
 -- }}}
 

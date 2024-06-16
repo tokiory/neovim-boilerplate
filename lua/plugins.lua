@@ -107,7 +107,6 @@ return {
   -- Trouble {{{
   {
     "folke/trouble.nvim",
-    lazy = true,
     dependencies = "kyazdani42/nvim-web-devicons",
     config = function()
       require "extensions.trouble"
