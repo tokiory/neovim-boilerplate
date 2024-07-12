@@ -77,3 +77,5 @@ You can use this template with the following command:
 - Rewrite it from scratch (it’s a template, cmon), you can replace each plugin with your favorite one;
 - RTFM, each plugin has a comment with a link to the repository;
 - Don't be afraid to break something. Remember: you can fork this repo as much as you like, just don't be afraid to break it;
+
+[![Star History Chart](https://api.star-history.com/svg?repos=tokiory/neovim-boilerplate&type=Date)](https://star-history.com/#tokiory/neovim-boilerplate&Date)
