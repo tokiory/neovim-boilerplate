@@ -5,6 +5,7 @@ Boilerplate for Neovim. A simple, well-documented template to start building you
 Also, this boilerplate will be useful for beginners who do not know where to start writing their configuration. All files are well documented, at the top of each file you can find a frontmatter with the necessary data.
 
 ## Use it
+
 You can use this template with the following command:
 
 ```bash
@@ -17,6 +18,7 @@ You can use this template with the following command:
 > You can install it with your favorite package manager, but, I recommend using asdf.
 > You can get it [from this repo](https://github.com/asdf-vm/asdf).
 > After installation you will need to enter the following commands:
+>
 > ```bash
 > asdf plugin add nodejs
 > asdf plugin add golang
@@ -24,48 +26,54 @@ You can use this template with the following command:
 > asdf install nodejs <any version from 16>
 > ```
 
-
 # Structure
 
 ```
 .
 ├── init.lua                  -- Entry point
-├── init.sh                   -- Script for installation side-software (aka packer)
-│
 ├── lua
-│  ├── extensions             -- Plugin configurations
-│  │
+│  ├── plugins                -- Plugin configurations
 │  ├── helpers
-│  │  ├── globals.lua         -- Global variables (aliases)
-│  │  └── keyboard.lua        -- Keyboard helper functions
-│  │
-│  ├── keybindings.lua        -- Keyboard mappings
-│  ├── plugins.lua            -- Plugin initialization via Packer
+│  │  └── globals.lua         -- Global variables (aliases)
 │  └── settings.lua           -- Settings for neovim
 └── README.md
 ```
+
+## How does lazy.lua load plugins
+
+Every file inthe `lua/plugins` directory represents a separate plugin configuration, and is automatically loaded by [lazy.nvim](https://github.com/folke/lazy.nvim). The `init.lua` file (or your main config) tells lazy.nvim to scan this folder and load each file as a plugin specification.
+
+This means you can add, remove, or edit plugin configs by simply creating or editing files in `lua/plugins/`. Each file should return a [Lua table](https://www.lua.org/pil/2.5.html) describing the plugin and its options (see the examples in this repo). lazy.nvim will handle loading, dependencies, and lazy-loading based on the options you specify (like `event`, `keys`, `cmd`, etc).
+
+## Where to put keybindings
+If you have some global keybindings, you should put them into `lua/keybindings.lua`. This file is intended to be the central place for all your custom key mappings that are not specific to a single plugin. Keeping your keybindings organized in one place makes it easier to manage, update, or troubleshoot them as your configuration grows.
+
+When defining a new shortcut, it's highly recommended to use [which-key.nvim](https://github.com/folke/which-key.nvim) (often referred to as `wk` in configs). which-key provides a helpful popup that shows available keybindings in context, making it much easier to discover and remember your shortcuts. You can register keybindings with descriptions, group related mappings, and even set up leader-key menus for a more intuitive workflow.
+
+If you want to add plugin-specific keybindings, you can also define them directly in the corresponding plugin config file inside `lua/plugins/`, using the `keys` field in the plugin spec table. However, for global or cross-plugin shortcuts, `lua/keybindings.lua` is the best place.
+
+> [!NOTE]
+> **Remember**: Consistency and documentation are key! Add descriptions to your keybindings so which-key can display them, and keep related mappings grouped together for clarity.
 
 # Packed Plugins
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
-- [neo-tree](https://github.com/nvim-tree/nvim-tree.lua) (*optional, you should uncomment it*)
 - [telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [cmp](https://github.com/hrsh7th/nvim-cmp)
 - [lspkind](https://github.com/onsails/lspkind.nvim)
 - [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
 - [trouble.nvim](https://github.com/folke/trouble.nvim)
 - [Tree Sitter](https://github.com/tree-sitter/tree-sitter)
-- [vitesse](https://github.com/2nthony/vitesse.nvim)
 - [mini.nvim](https://github.com/echasnovski/mini.nvim)
 
 ## Opionated standards
+
 - Use lazy.nvim as a plugin manager, it is fast, simple and has a nice user interface;
 - Use Mason with mason-lspconfig to manage LSP servers;
 - Use which-key to handle all keyboard shortcuts because it's easy and fun to use;
 - Use mini.files as your main explorer because it is fast and minimalistic;
-- You can use the standard (de facto) NeoTree as the main explorer, just uncomment it and comment out mini.files;
 - Use cmp.nvim with lspkind as a completion manager as it provides great source support for completion;
 - Use gitsigns to work with git stashes because it gives good highlights;
 - Use Trouble nvim as an alternative to quicklist because it has a nice interface;
@@ -74,6 +82,7 @@ You can use this template with the following command:
 - Use mini.nvim for editor utilities because mini.nvim provides a great experience and is as minimalistic as possible;
 
 ## 💡 Tips
+
 - Rewrite it from scratch (it’s a template, cmon), you can replace each plugin with your favorite one;
 - RTFM, each plugin has a comment with a link to the repository;
 - Don't be afraid to break something. Remember: you can fork this repo as much as you like, just don't be afraid to break it;
